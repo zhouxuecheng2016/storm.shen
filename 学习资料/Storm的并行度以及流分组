@@ -1,0 +1,27 @@
+
+(1):集群架构、核心概念、并行度和流分组
+(2):掌握最常见的storm开发范式，spout消费kafka，后面跟一堆bolt，bolt之间设定好流分组的策略
+(3):storm拓扑打包后提交到storm集群上去运行
+(4):通过storm ui去查看你的实时计算拓扑的运行现状
+
+流分组的时候，数据在storm集群中的流向
+
+并行度：Worker->Executor->Task，没错，是Task
+Task对应于一个Spout或者Bolt组件
+
+流分组：Task与Task之间的数据流向关系
+
+Shuffle Grouping：随机发射，负载均衡
+Fields Grouping：根据某一个，或者某些个，fields，进行分组，那一个或者多个fields如果值完全相同的话，那么这些tuple，就会发送给下游bolt的其中固定的一个task
+
+你发射的每条数据是一个tuple，每个tuple中有多个field作为字段
+
+All Grouping :下游Task接收上游所有的Task.
+Global Grouping:最小的那个Task.
+None Grouping:Shuffle Task.
+Direct Grouping:直接发送到指定的Task.
+Local or Shuffle Grouping:同一个Worker内进行.
+
+
+
+

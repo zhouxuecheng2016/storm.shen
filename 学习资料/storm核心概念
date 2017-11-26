@@ -1,0 +1,25 @@
+
+1、Storm的集群架构
+每个实时计算的程序，都可以设置需要多少个进程或者线程去执行
+Nimbus，Supervisor，ZooKeeper，Worker，Executor，Task
+Nimbus:集群架构中的主节点,负责元数据的维护，资源调度，提交实时计算作业的入口
+Supervisor:运行一个实时计算的作业或者说是流程
+Worker:Supervisor上启动的进程
+Executor:启动的线程
+Task:Java对象，不是线程，处理其中一部分数据 code.
+     存放的是自己写的代码的副本.
+ZooKeeper:nimbus supervisor元数据存储在里面
+
+2、Storm的核心概念
+Topology，Spout，Bolt，Tuple，Stream
+
+拓扑：务虚的一个概念
+
+Spout：数据源的一个代码组件，就是我们可以实现一个spout接口，写一个java类，在这个spout代码中，我们可以自己尝试去数据源获取数据，比如说从kafka中消费数据
+
+bolt：一个业务处理的代码组件，spout会将数据传送给bolt，各种bolt还可以串联成一个计算链条，java类实现了一个bolt接口
+一堆spout+bolt，就会组成一个topology，就是一个拓扑，实时计算作业，spout+bolt，一个拓扑涵盖数据源获取/生产+数据处理的所有的代码逻辑，topology
+
+tuple：就是一条数据，每条数据都会被封装在tuple中，在多个spout和bolt之间传递
+
+stream：就是一个流，务虚的一个概念，抽象的概念，源源不断过来的tuple，就组成了一条数据流
