@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Storm.iml" filepath="$PROJECT_DIR$/Storm.iml" />
       <module fileurl="file://$PROJECT_DIR$/StormBasic/StormBasic.iml" filepath="$PROJECT_DIR$/StormBasic/StormBasic.iml" />
-      <module fileurl="file://E:\StartDevelop\storm.shen\StormBasic.iml" filepath="E:\StartDevelop\storm.shen\StormBasic.iml" />
       <module fileurl="file://$PROJECT_DIR$/StormHello/StormHello.iml" filepath="$PROJECT_DIR$/StormHello/StormHello.iml" />
       <module fileurl="file://$PROJECT_DIR$/StormTrident/StormTrident.iml" filepath="$PROJECT_DIR$/StormTrident/StormTrident.iml" />
     </modules>
