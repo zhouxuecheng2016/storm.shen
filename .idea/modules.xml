@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Storm.iml" filepath="$PROJECT_DIR$/Storm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StormBaisc/StormBaisc.iml" filepath="$PROJECT_DIR$/StormBaisc/StormBaisc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StormBasic.iml" filepath="$PROJECT_DIR$/StormBasic.iml" />
       <module fileurl="file://$PROJECT_DIR$/StormHello/StormHello.iml" filepath="$PROJECT_DIR$/StormHello/StormHello.iml" />
       <module fileurl="file://$PROJECT_DIR$/StormTrident/StormTrident.iml" filepath="$PROJECT_DIR$/StormTrident/StormTrident.iml" />
     </modules>

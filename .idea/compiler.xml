@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="StormBaisc" />
         <module name="StormHello" />
         <module name="StormTrident" />
       </profile>
@@ -13,6 +14,8 @@
     <bytecodeTargetLevel>
       <module name="Storm" target="1.5" />
       <module name="Storm-Basic" target="1.5" />
+      <module name="StormBaisc" target="1.5" />
+      <module name="StormBasic" target="1.5" />
       <module name="StormHello" target="1.5" />
       <module name="StormTrident" target="1.5" />
     </bytecodeTargetLevel>

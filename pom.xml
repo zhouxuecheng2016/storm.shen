@@ -8,6 +8,7 @@
     <modules>
         <module>StormHello</module>
         <module>StormTrident</module>
+        <module>StormBaisc</module>
     </modules>
     <name>Storm Maven Mojo</name>
     <url>http://maven.apache.org</url>
