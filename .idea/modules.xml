@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Storm.iml" filepath="$PROJECT_DIR$/Storm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StormBasic/Storm-Basic.iml" filepath="$PROJECT_DIR$/StormBasic/Storm-Basic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StormHello/StormHello.iml" filepath="$PROJECT_DIR$/StormHello/StormHello.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StormTrident/StormTrident.iml" filepath="$PROJECT_DIR$/StormTrident/StormTrident.iml" />
+    </modules>
+  </component>
+</project>
