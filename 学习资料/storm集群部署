@@ -1,0 +1,40 @@
+（1）安装Java 7和Pythong 2.6.6
+（2）下载storm安装包，解压缩，重命名，配置环境变量
+（3）修改storm配置文件
+mkdir /var/storm
+conf/storm.yaml
+storm.zookeeper.servers:
+  - "111.222.333.444"
+  - "555.666.777.888"
+
+storm.local.dir: "/mnt/storm"
+
+nimbus.seeds: ["111.222.333.44"]
+
+slots.ports，指定每个机器上可以启动多少个worker，一个端口号代表一个worker
+
+supervisor.slots.ports:
+    - 6700
+    - 6701
+    - 6702
+    - 6703
+
+(4)启动storm集群和ui界面
+
+一个节点，storm nimbus >/dev/null 2>&1 &
+三个节点，storm supervisor >/dev/null 2>&1 &
+一个节点，storm ui >/dev/null 2>&1 &
+supervisor节点上面storm logviewer >/dev/null 2>&1 &
+（5）访问一下ui界面，8080端口
+
+（1）提交作业到storm集群
+
+storm jar path/to/allmycode.jar org.me.MyTopology arg1 arg2 arg3
+
+storm jar Storm-Hello-1.0-SNAPSHOT.jar com.roncoo.eshop.storm.WordCountTopology wordCounntTopology
+
+（2）在storm ui上观察storm作业的运行
+
+（3）kill掉某个storm作业
+
+storm kill wordCounntTopology

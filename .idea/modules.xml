@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/EshopStorm/EshopStorm.iml" filepath="$PROJECT_DIR$/EshopStorm/EshopStorm.iml" />
       <module fileurl="file://$PROJECT_DIR$/Storm.iml" filepath="$PROJECT_DIR$/Storm.iml" />
       <module fileurl="file://$PROJECT_DIR$/StormBasic/StormBasic.iml" filepath="$PROJECT_DIR$/StormBasic/StormBasic.iml" />
       <module fileurl="file://$PROJECT_DIR$/StormHello/StormHello.iml" filepath="$PROJECT_DIR$/StormHello/StormHello.iml" />
