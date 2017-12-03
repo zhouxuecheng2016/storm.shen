@@ -19,6 +19,8 @@ import org.apache.storm.topology.base.BaseRichSpout;
 import org.apache.storm.tuple.Fields;
 import org.apache.storm.tuple.Values;
 import org.apache.storm.utils.Utils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * kafka消费数据的spout
@@ -26,7 +28,9 @@ import org.apache.storm.utils.Utils;
 public class AccessLogKafkaSpout extends BaseRichSpout {
 
 	private static final long serialVersionUID = 8698470299234327074L;
-
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(AccessLogKafkaSpout.class);
+	
 	private ArrayBlockingQueue<String> queue = new ArrayBlockingQueue<String>(1000);
 	
 	private SpoutOutputCollector collector;
@@ -79,6 +83,7 @@ public class AccessLogKafkaSpout extends BaseRichSpout {
 			ConsumerIterator<byte[], byte[]> it = kafkaStream.iterator();
 	        while (it.hasNext()) {
 	        	String message = new String(it.next().message());
+	        	LOGGER.info("【AccessLogKafkaSpout中的Kafka消费者接收到一条日志】message=" + message);  
 	        	try {
 					queue.put(message);
 				} catch (InterruptedException e) {
@@ -93,7 +98,8 @@ public class AccessLogKafkaSpout extends BaseRichSpout {
 		if(queue.size() > 0) {
 			try {
 				String message = queue.take();
-				collector.emit(new Values(message));  
+				collector.emit(new Values(message));
+				LOGGER.info("【AccessLogKafkaSpout发射出去一条日志】message=" + message);  
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

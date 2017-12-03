@@ -55,7 +55,7 @@ public class ZooKeeperSession {
 	
 	/**
 	 * 获取分布式锁
-	 *
+	 * @param productId
 	 */
 	public void acquireDistributedLock() {
 		String path = "/taskid-list-lock";
@@ -112,6 +112,14 @@ public class ZooKeeperSession {
 			zookeeper.setData(path, data.getBytes(), -1);
 		} catch (Exception e) {
 			e.printStackTrace();
+		}
+	}
+	
+	public void createNode(String path) {
+		try {
+			zookeeper.create(path, "".getBytes(), Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
+		} catch (Exception e) {
+			
 		}
 	}
 	
