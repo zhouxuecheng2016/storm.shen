@@ -1,0 +1,18 @@
+
+nohup bin/kafka-server-start.sh config/server.properties &
+
+1:create
+bin/kafka-topics.sh --create --zookeeper 192.168.1.81:2181,192.168.1.82:2181,192.168.1.83:2181 --topic test --replication-factor 1 --partitions 1
+
+2:list
+bin/kafka-topics.sh --list --zookeeper 192.168.1.81:2181,192.168.1.82:2181,192.168.1.83:2181
+
+3:produce
+bin/kafka-console-producer.sh --broker-list 192.168.1.81:9092,192.168.1.82:9092,192.168.1.83:9092 .227:9092 --topic test
+
+4:consume
+bin/kafka-console-consumer.sh --zookeeper 192.168.1.81:2181,192.168.1.82:2181,192.168.1.83:2181  --topic test --from-beginning
+
+bin/kafka-topics.sh --zookeeper 192.168.1.81:2181,192.168.1.82:2181,192.168.1.83:2181 --topic access-log --replication-factor 1 --partitions 1 --create
+
+bin/kafka-console-consumer.sh --zookeeper 192.168.1.81:2181,192.168.1.82:2181,192.168.1.83:2181  --topic access-log --from-beginning

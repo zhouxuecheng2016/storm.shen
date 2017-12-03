@@ -21,10 +21,11 @@ supervisor.slots.ports:
 
 (4)启动storm集群和ui界面
 
-一个节点，storm nimbus >/dev/null 2>&1 &
-三个节点，storm supervisor >/dev/null 2>&1 &
-一个节点，storm ui >/dev/null 2>&1 &
-supervisor节点上面storm logviewer >/dev/null 2>&1 &
+一个节点:storm nimbus >/dev/null 2>&1 &
+三个节点:storm supervisor >/dev/null 2>&1 &
+一个节点:storm ui >/dev/null 2>&1 &
+supervisor节点上面:storm logviewer >/dev/null 2>&1 &
+
 （5）访问一下ui界面，8080端口
 
 （1）提交作业到storm集群
