@@ -26,7 +26,7 @@ public class ZooKeeperSession {
 		// 所以要给一个监听器，说告诉我们什么时候才是真正完成了跟zk server的连接
 		try {
 			this.zookeeper = new ZooKeeper(
-					"192.168.1.81:2181,192.168.1.82:2181,192.168.1.83:2181",
+					"192.168.31.187:2181,192.168.31.19:2181,192.168.31.227:2181", 
 					50000, 
 					new ZooKeeperWatcher());
 			// 给一个状态CONNECTING，连接中

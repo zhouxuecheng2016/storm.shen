@@ -4,3 +4,8 @@
 3、每个storm task将自己统计出的热数据list写入自己对应的znode中
 4、task初始化
 5、热门商品list保存
+
+storm jar Eshop-Storm-1.0-SNAPSHOT.jar com.roncoo.eshop.storm.HotProductTopology HotProductTopology
+
+
+

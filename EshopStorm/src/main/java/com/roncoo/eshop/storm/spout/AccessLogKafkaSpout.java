@@ -45,7 +45,7 @@ public class AccessLogKafkaSpout extends BaseRichSpout {
 	@SuppressWarnings("rawtypes")
 	private void startKafkaConsumer() {
 		Properties props = new Properties();
-        props.put("zookeeper.connect", "192.168.1.81:2181,192.168.1.82:2181,192.168.1.83:2181");
+        props.put("zookeeper.connect", "192.168.31.187:2181,192.168.31.19:2181,192.168.31.227:2181");
         props.put("group.id", "eshop-cache-group");
         props.put("zookeeper.session.timeout.ms", "40000");
         props.put("zookeeper.sync.time.ms", "200");
